@@ -44,7 +44,7 @@ void app_main(void)
         return;
     }
 
-    ESP_ERROR_CHECK(si4713_tune_fm(&radio, 10730)); /* 88.50 MHz, kHz/10 units */
+    ESP_ERROR_CHECK(si4713_tune_fm(&radio, 10790)); /* 88.50 MHz, kHz/10 units */
     ESP_ERROR_CHECK(si4713_set_tx_power(&radio, 115, 0));
 
     ESP_ERROR_CHECK(si4713_begin_rds(&radio, 0xADAF));
