@@ -46,7 +46,7 @@ void app_main(void)
 
     ESP_ERROR_CHECK(si4713_tune_fm(&radio, 10790)); /* 88.50 MHz, kHz/10 units */
     ESP_ERROR_CHECK(si4713_set_tx_power(&radio, 115, 0));
-
+	ESP_ERROR_CHECK(si4713_set_property(&radio, SI4713_PROP_TX_PREEMPHASIS, 1)); // 50us, UK/EU
     ESP_ERROR_CHECK(si4713_begin_rds(&radio, 0xADAF));
     ESP_ERROR_CHECK(si4713_set_rds_station(&radio, "harmony"));
     ESP_ERROR_CHECK(si4713_set_rds_buffer(&radio, "Now playing: hamony radio"));
